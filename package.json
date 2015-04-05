@@ -1,0 +1,50 @@
+{
+  "name": "weekly",
+  "version": "0.1.0",
+  "description": "weekly weekly",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test",
+    "start": "make start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "~0.14.0",
+    "koa-bodyparser": "~1.3.0",
+    "koa-logger": "~1.2.2",
+    "koa-mount": "~1.3.0",
+    "koa-router": "~3.8.0",
+    "koa-static": "~1.4.8",
+    "lodash": "~2.4.1",
+    "log4js": "~0.6.21",
+    "xtemplate": "~4.1.3",
+    "xtpl": "~3.1.9",
+    "jquery": "^2.1.3",
+    "react": "^0.13.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.5.2",
+    "browserify": "^9.0.6",
+    "globby": "^1.2.0",
+    "gulp": "^3.8.11",
+    "gulp-clean": "^0.3.1",
+    "gulp-cssmin": "^0.1.6",
+    "gulp-less": "^3.0.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-minify-css": "^1.0.0",
+    "gulp-nodemon": "^2.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.4",
+    "istanbul": "^0.3.13",
+    "mocha": "^2.2.1",
+    "nodemon": "^1.3.7",
+    "reactify": "^1.1.0",
+    "should": "^5.2.0",
+    "supertest": "~0.15.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>koa</title>
+
+	<link rel="stylesheet" href="/static/{{page}}/index.min.css">
+
+	<script src="/lib/react/dist/react-with-addons.js"></script>
+	<script src="/lib/jquery/dist/jquery.js"></script>
+
+</head>
+<body>
+
+	{{include ("./partials/header")}}
+
+	<div class="content">
+		{{{block ("body")}}}
+	</div>
+
+	{{include ("./partials/footer")}}
+
+	<script src="/static/{{page}}/index.js"></script>
+
+</body>
+</html>

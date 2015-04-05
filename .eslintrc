@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true,
+    "jquery": true,
+    "amd": true
+  },
+  "ecmaFeatures": {
+    "jsx": true,
+    "genetator": true
+  },
+  "globals": {
+    "KISSY": true,
+    "React": true
+  },
+  "rules": {
+    "eqeqeq": 1,
+    "quotes": [1, "single"],
+    "strict": 0
+  }
+}
