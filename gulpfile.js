@@ -13,6 +13,7 @@ var uglify = require('gulp-uglify');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
 var rename = require('gulp-rename');
+var autoprefixer = require('gulp-autoprefixer');
 var gutil = require('gulp-util');
 
 var nodemon = require('gulp-nodemon');
@@ -87,6 +88,7 @@ gulp.task('css', ['clean'], function(){
     .pipe(less().on('error', function (err) {
     	gutil.log(err);
     }))
+    .pipe(autoprefixer())
     .pipe(minifyCSS())
     .pipe(rename({
         suffix: '.min'
