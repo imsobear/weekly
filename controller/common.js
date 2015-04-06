@@ -1,5 +1,10 @@
 
+'use strict';
 
+
+/**
+ * 首页
+ */
 exports.home = function *() {
 
 	yield this.render('home', {
@@ -9,6 +14,9 @@ exports.home = function *() {
 };
 
 
+/**
+ * 关于
+ */
 exports.about = function *() {
 
 	yield this.render('home', {
@@ -18,6 +26,9 @@ exports.about = function *() {
 };
 
 
+/**
+ * 404
+ */
 exports.notFound = function *() {
 	this.status = 404;
 };

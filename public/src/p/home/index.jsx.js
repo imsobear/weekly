@@ -1,5 +1,5 @@
 
-var Header = require('../../c/header/header.jsx');
+'use strict';
 
 
 module.exports = (function () {

@@ -5,7 +5,7 @@
  *   大果 <liuxiong.lx@alibaba-inc.com>
  */
 
-"use strict";
+'use strict';
 
 /**
  * Module dependencies.
