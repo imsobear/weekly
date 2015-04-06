@@ -13,9 +13,15 @@
 
 
 /**
- * 登录中间件
+ *
  */
-exports.auth = function* (next) {
+exports.setLocal = function* (next) {
+
+	this.locals = {
+		isDebug: 111
+	};
+
 	yield next;
+
 };
 

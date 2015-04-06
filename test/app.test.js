@@ -16,6 +16,14 @@ describe('App.js', function() {
 
 	});
 
+	it('get /about should return 200', function(done) {
+
+		request(url)
+			.get('/about')
+			.expect(200, done);
+
+	});
+
 	it('get /404 should return 404', function(done) {
 
 		request(url)

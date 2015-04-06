@@ -26,7 +26,7 @@ var middleware = require('./common/middleware');
 require('./common/xtemplate');
 
 var app = require('xtpl/lib/koa')(koa(), {
-    views: path.resolve(__dirname, './view')
+  views: path.resolve(__dirname, './view')
 });
 
 if (process.env.NODE_ENV === 'local') {
@@ -37,6 +37,8 @@ app.use(bodyParser());
 
 app.use(mount('/static', serve('./public/build/p')));
 app.use(mount('/lib', serve('./node_modules')));
+
+// app.use(middleware.setLocal);
 
 app.use(router(app));
 

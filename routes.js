@@ -18,10 +18,10 @@ var common = require('./controller/common');
  */
 module.exports = function (app) {
 
-	app.get('/', common.index);
+	app.get('/', common.home);
 
-	app.get('/404', function *(req, res) {
-		this.status = 404;
-	})
+	app.get('/about', common.about);
+
+	app.get('*', common.notFound);
 
 };
