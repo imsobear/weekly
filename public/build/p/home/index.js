@@ -2,12 +2,117 @@
 
 'use strict';
 
+const Subscribe = require('../../c/subscribe/index.jsx');
 
-module.exports = (function () {
+React.render(
+	React.createElement(Subscribe, null),
+	$('.content')[0]
+);
 
-	console.log(111);
 
-})();
+},{"../../c/subscribe/index.jsx":3}],2:[function(require,module,exports){
+
+'use strict';
+
+module.exports = {
+
+	API: {
+
+		// 获取所有的 weekly
+		getWeeklyList: '/weeklyList'
+
+	}
+
+};
+
+
+},{}],3:[function(require,module,exports){
+/**
+ * 订阅 weekly 的组件
+ */
+
+'use strict';
+
+const Base = require('../base/index');
+const SelectWeekly = require('./selectWeekly.jsx');
+
+const Subscribe = React.createClass({displayName: "Subscribe",
+
+	getInitialState:function() {
+		return {tags: []};
+  },
+
+	componentDidMount:function() {
+
+		$.getJSON(Base.API.getWeeklyList, function(res)  {
+			if (res.status === 1) {
+				this.setState({
+					weeklyList: res.weeklyList
+				});
+			} else {
+				alert(err);
+			}
+
+		}.bind(this), function(err)  {
+
+			alert(err);
+
+		});
+
+	},
+
+
+	render:function() {
+
+		return (
+			React.createElement("div", {className: "subscribe-widget"}, 
+				React.createElement("h2", null, "订阅："), 
+				React.createElement(SelectWeekly, {list: this.state.weeklyList})
+			)
+		)
+
+	}
+
+});
+
+module.exports = Subscribe;
+
+
+},{"../base/index":2,"./selectWeekly.jsx":4}],4:[function(require,module,exports){
+/**
+ * 选择需要订阅的 weekly
+ */
+
+'use strict'
+
+const SelectWeekly = React.createClass({displayName: "SelectWeekly",
+
+	getInitialState:function() {
+		return {};
+  },
+
+	componentDidMount:function() {
+	},
+
+	render:function() {
+
+		var weeklyList = this.props.list || [];
+
+		return (
+			React.createElement("ul", null, 
+			
+				weeklyList.map(function(weekly)  {
+					return React.createElement("li", null, weekly.name)
+				})
+			
+			)
+		);
+	}
+
+});
+
+
+module.exports = SelectWeekly;
 
 
 },{}]},{},[1]);

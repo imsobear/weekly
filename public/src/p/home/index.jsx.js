@@ -1,9 +1,9 @@
 
 'use strict';
 
+const Subscribe = require('../../c/subscribe/index.jsx');
 
-module.exports = (function () {
-
-	console.log(111);
-
-})();
+React.render(
+	<Subscribe />,
+	$('.content')[0]
+);

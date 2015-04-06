@@ -68,7 +68,9 @@ gulp.task('js', ['clean'], function(){
 	    	.pipe(source('index.js'))
 	    	.pipe(gulp.dest(BUILD_PAGE + '/' + pageName))
 	    	.pipe(buffer())
-	    	.pipe(uglify())
+	    	.pipe(uglify().on('error', function (err) {
+	    		gutil.log(err);
+	    	}))
 	    	.pipe(rename({
 	    		suffix: '.min'
 	    	}))
@@ -103,7 +105,7 @@ gulp.task('build', ['clean', 'js', 'css'], browserSync.reload);
 // watch task
 gulp.task('watch', function () {
 
-	gulp.watch(SRC_BASE + '/**/*', ['build']);
+	gulp.watch( SRC_BASE + '/**/*', ['build']);
 
 	nodemon({
 		script: 'app.js',

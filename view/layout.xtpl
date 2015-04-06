@@ -10,7 +10,7 @@
 	<script src="/lib/jquery/dist/jquery.js"></script>
 
 </head>
-<body>
+<body class="{{page}}">
 
 	{{include ("./partials/header")}}
 

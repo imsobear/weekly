@@ -11,6 +11,7 @@
  * Module dependencies.
  */
 var common = require('./controller/common');
+var weekly = require('./controller/weekly');
 
 
 /**
@@ -21,6 +22,8 @@ module.exports = function (app) {
 	app.get('/', common.home);
 
 	app.get('/about', common.about);
+
+	app.get('/weeklyList', weekly.getWeeklyList);
 
 	app.get('*', common.notFound);
 
