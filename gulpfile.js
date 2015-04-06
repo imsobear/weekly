@@ -105,7 +105,10 @@ gulp.task('watch', function () {
 
 	nodemon({
 		script: 'app.js',
-		stdout: true,
+		execMap: {
+        js: "node --harmony"
+    },
+    stdout: true,
 		ext: 'js xtpl',
 		ignore: ['./public', 'gulpfile.js', './test', './node_modules']
 	}).on('restart', function () {
